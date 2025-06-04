@@ -1,0 +1,119 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #F7ECDE;
+}
+h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 50px;
+  font-weight: 500;
+  color: rgb(53, 46, 40);
+  text-align: center;
+  margin-top: 60px;
+  position: relative;
+  z-index: 1;
+  padding-bottom: 60px;
+  border-bottom: 2px dotted black;
+}
+
+h1::after {
+  content: '';
+  display: block;
+  width: 280px;
+  height: 18px;
+  background-color: #FEC260;
+  margin: 0 auto; 
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  bottom: 64px;
+}
+
+h1:hover::after {
+  height: 35px; 
+  background-color: #FEC260;
+  transition: height 0.3s ease-in-out, bottom 0.3s ease-in-out; 
+}
+h2{
+  font-family:monospace;
+  font-size: 25px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  background: linear-gradient(to right, #008225, #FFD93D);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  margin-top: 20px;
+}
+label{
+  font-family: 'PT Sans Caption' ,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: RGB(33, 37, 41);
+}
+.bt1{
+  font-family: 'PT Sans Caption', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+  background-color: #D1512D;
+  border: none;
+  padding: 8px 50px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.bt1:hover {
+  background-color: #b64126;
+  outline: black 1px solid;
+  transition: background-color 0.3s ease-in-out;
+}
+.fform{
+  border-bottom: 2px dotted black;
+}
+
+.equal-width {
+    width: 25%;
+    text-align: center;
+}
+.bt2{
+  font-family: 'PT Sans Caption', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+  background-color: #a9be42;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.bt2:hover {
+  background-color: #8a9e23;
+  outline: black 1px solid;
+  transition: background-color 0.3s ease-in-out;
+}
+.bt3{
+  font-family: 'PT Sans Caption', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+  background-color: rgb(235, 29, 54);
+  border: none;
+  padding: 8px 30px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.bt3:hover {
+  background-color: rgb(202, 15, 36);
+  outline: black 1px solid;
+  transition: background-color 0.3s ease-in-out;
+}
+.bt1:active ,.bt2:active, .bt3:active {
+  background-color: #F7ECDE;
+  color: black;
+  outline: black 1px solid;
+  transition: background-color 0.1s ease-in-out;
+}
+.btn{
+  margin: 10px;
+}
