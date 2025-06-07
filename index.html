@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/css.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&display=swap" rel="stylesheet">
 </head>
@@ -23,14 +23,14 @@
         <div class="fform p-3">
             <div class="mb-4">
                 <label for="name" class="form-label"><i class="bi bi-bookmark-fill"></i> Site Name</label>
-                <input oninput="validInputs(this)" name="name" type="text" class="form-control" id="name" placeholder="Bookmark Name" aria-label="Bookmark Name" aria-describedby="visible-addon">
+                <input oninput="validInputs(this)" name="name" type="text" class="form-control" id="name" placeholder="Bookmark Name" aria-label="Bookmark Name" aria-describedby="visible-addon" >
             </div>
             <div class="mb-4">
                 <label for="url" class="form-label"><i class="cc bi bi-link-45deg"></i>Site URL</label>
-                <input type="text" class="form-control" id="url" placeholder="example.com" aria-label="Bookmark Name" aria-describedby="visible-addon">
+                <input oninput="validInputs(this)" type="text" class="form-control" id="url" placeholder="example.com" aria-label="Bookmark Name" aria-describedby="visible-addon" >
             </div>
             <div class="text-center">
-                <button oninput="validInputs(this)" onclick="addBookmark()" id="submit" type="submit" class=" bt1 btn-primary">Submit</button>
+                <button onclick="addBookmark()" id="submit" type="submit" class=" bt1 btn-primary">Submit</button>
             </div>
         </div>
 
