@@ -67,6 +67,7 @@ function validateForm() {
     }
     return true;
 }
+
 function addBookmark() {
     if (validateForm()) {
         var bookmarks = JSON.parse(localStorage.getItem("bookmarks")) || [];
