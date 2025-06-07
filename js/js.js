@@ -2,6 +2,41 @@ var submitButton = document.getElementById("submit");
 var nameInput = document.getElementById("name");
 var url = document.getElementById("url");
 
+function validInputs(input) {
+    const nameInput = document.getElementById('name');
+    const urlInput = document.getElementById('url');
+    const submitButton = document.getElementById('submit');
+    var reg = /^[A-Za-z0-9\-]{3,63}\.com(\/.*)?$/;
+    var reg2 = /^(http?:\/\/)?(www\.)?[a-z0-9\-]+(\.[a-z]{2,})+([\/\w\-\.\?&=%]*)?$/;
+    var reg3 = /^(https?:\/\/)?(www\.)?[a-z0-9\-]+(\.[a-z]{2,})+([\/\w\-\.\?&=%]*)?$/;
+    input.classList.remove('is-invalid');
+    if (input.id === 'name') {
+        if (input.value.length < 3 || input.value.length > 20) {
+            input.classList.add('is-invalid');
+        }
+        else {
+            input.classList.remove('is-invalid');
+            input.classList.add('is-valid');
+        }
+    }
+    if (input.id === 'url') {
+        const urlValue = input.value.trim();
+        if (!reg.test(urlValue) && !reg2.test(urlValue) && !reg3.test(urlValue)) {
+            input.classList.add('is-invalid');
+        }
+        else {
+            input.classList.remove('is-invalid');
+            input.classList.add('is-valid');
+        }
+    }
+    if (nameInput.value.length >= 3 && nameInput.value.length <= 20 &&
+        (reg.test(urlInput.value.trim()) || reg2.test(urlInput.value.trim()) || reg3.test(urlInput.value.trim()))) {
+        submitButton.disabled = false;
+    } else {
+        submitButton.disabled = true;
+    }
+}
+
 function validateForm() {
     var reg = /^[A-Za-z0-9\-]{3,63}\.com(\/.*)?$/;
     var reg2 = /^(http?:\/\/)?(www\.)?[a-z0-9\-]+(\.[a-z]{2,})+([\/\w\-\.\?&=%]*)?$/;
@@ -11,7 +46,7 @@ function validateForm() {
             title: "Error!",
             text: "Please fill out all fields.",
             icon: "error"
-        });
+        });;
         return false;
     }
     else if (nameInput.value.length < 3 || nameInput.value.length > 20) {
@@ -19,7 +54,7 @@ function validateForm() {
             title: "Error!",
             text: "Name must be between 3 and 20 characters.",
             icon: "error"
-        });
+        }); 
         return false;
     }
     else if (!reg.test(url.value.trim()) && !reg2.test(url.value.trim()) && !reg3.test(url.value.trim())) {
