@@ -120,12 +120,14 @@ function visit(url) {
     if (!url.startsWith("http://") && !url.startsWith("https://")) {
         url = "http://" + url;
     }
+        //heeeeeeeeeeyGithub
     else if (url.endsWith(".com")) {
         url = url;
     } 
     else {
         url = url + ".com";
     }
+        //heeeeeeeeeeyGithub
     window.open(url, "_blank");
 }
 function deleteBookmark(index) {
