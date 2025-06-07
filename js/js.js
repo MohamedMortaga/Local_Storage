@@ -117,7 +117,16 @@ function renderBookmarks() {
 }
 
 function visit(url) {
-    window.open("https://www." + url, "_blank");
+    if (!url.startsWith("http://") && !url.startsWith("https://")) {
+        url = "http://" + url;
+    }
+    else if (url.endsWith(".com")) {
+        url = url;
+    } 
+    else {
+        url = url + ".com";
+    }
+    window.open(url, "_blank");
 }
 
 function deleteBookmark(index) {
