@@ -128,7 +128,6 @@ function visit(url) {
     }
     window.open(url, "_blank");
 }
-
 function deleteBookmark(index) {
 
 
