@@ -93,6 +93,8 @@ function addBookmark() {
         }
         nameInput.value = "";
         url.value = "";
+        nameInput.classList.remove('is-valid');
+        url.classList.remove('is-valid');
         renderBookmarks();
     }
 }
