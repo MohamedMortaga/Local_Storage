@@ -4,6 +4,8 @@ var url = document.getElementById("url");
 
 function validateForm() {
     var reg = /^[A-Za-z0-9\-]{3,63}\.com(\/.*)?$/;
+    var reg2 = /^(http?:\/\/)?(www\.)?[a-z0-9\-]+(\.[a-z]{2,})+([\/\w\-\.\?&=%]*)?$/;
+    var reg3 = /^(https?:\/\/)?(www\.)?[a-z0-9\-]+(\.[a-z]{2,})+([\/\w\-\.\?&=%]*)?$/;
     if (nameInput.value === "" || url.value === "") {
         Swal.fire({
             title: "Error!",
@@ -20,17 +22,16 @@ function validateForm() {
         });
         return false;
     }
-    else if (!reg.test(url.value.trim())) {
+    else if (!reg.test(url.value.trim()) && !reg2.test(url.value.trim()) && !reg3.test(url.value.trim())) {
         Swal.fire({
             title: "Error!",
-            text: "Please enter a valid URL that ends with .com.",
+            text: "Please enter a valid URL that ends with .com or starts with http:// or https://",
             icon: "error"
         });
         return false;
     }
     return true;
 }
-
 function addBookmark() {
     if (validateForm()) {
         var bookmarks = JSON.parse(localStorage.getItem("bookmarks")) || [];
