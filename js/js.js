@@ -100,6 +100,7 @@ function addBookmark() {
 }
 
 function renderBookmarks() {
+    
     var bookmarks = JSON.parse(localStorage.getItem("bookmarks")) || [];
     var bookmarksTable = document.getElementById("bookmarks");
     var row = "";
@@ -109,7 +110,7 @@ function renderBookmarks() {
             <td>${index + 1}</td>
             <td>${bookmark.name}</td>
             <td><button class="bt2  btn-danger" onclick="visit('${bookmark.url}')"><i class="bi bi-eye"></i> Visit</button></td>
-            <td><button class="bt3  btn-primary" onclick="deleteBookmark('${index}')"><i class="bi bi-trash"></i> Delete</button></td> //delete by index
+            <td><button class="bt3  btn-primary" onclick="deleteBookmark('${index}')"><i class="bi bi-trash"></i> Delete</button></td>
         </tr>
         `;
     });
@@ -131,9 +132,6 @@ function visit(url) {
     window.open(url, "_blank");
 }
 function deleteBookmark(index) {
-
-
-
     const swalWithBootstrapButtons = Swal.mixin({
         customClass: {
             confirmButton: "btn btn-success",
