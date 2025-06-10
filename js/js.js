@@ -98,25 +98,6 @@ function addBookmark() {
         renderBookmarks();
     }
 }
-
-function renderBookmarks() {
-    
-    var bookmarks = JSON.parse(localStorage.getItem("bookmarks")) || [];
-    var bookmarksTable = document.getElementById("bookmarks");
-    var row = "";
-    bookmarks.forEach((bookmark, index) => {
-        row += `
-        <tr class="bookmark equal-width">
-            <td>${index + 1}</td>
-            <td>${bookmark.name}</td>
-            <td><button class="bt2  btn-danger" onclick="visit('${bookmark.url}')"><i class="bi bi-eye"></i> Visit</button></td>
-            <td><button class="bt3  btn-primary" onclick="deleteBookmark('${index}')"><i class="bi bi-trash"></i> Delete</button></td>
-        </tr>
-        `;
-    });
-    bookmarksTable.innerHTML = row;
-}
-
 function visit(url) {
     if (!url.startsWith("http://") && !url.startsWith("https://")) {
         url = "http://" + url;
@@ -173,7 +154,23 @@ function deleteBookmark(index) {
     });
 
 }
-
+function renderBookmarks() {
+    
+    var bookmarks = JSON.parse(localStorage.getItem("bookmarks")) || [];
+    var bookmarksTable = document.getElementById("bookmarks");
+    var row = "";
+    bookmarks.forEach((bookmark, index) => {
+        row += `
+        <tr class="bookmark equal-width">
+            <td>${index + 1}</td>
+            <td>${bookmark.name}</td>
+            <td><button class="bt2  btn-danger" onclick="visit('${bookmark.url}')"><i class="bi bi-eye"></i> Visit</button></td>
+            <td><button class="bt3  btn-primary" onclick="deleteBookmark('${index}')"><i class="bi bi-trash"></i> Delete</button></td>
+        </tr>
+        `;
+    });
+    bookmarksTable.innerHTML = row;
+}
 window.onload = function() {
     renderBookmarks();
 };
